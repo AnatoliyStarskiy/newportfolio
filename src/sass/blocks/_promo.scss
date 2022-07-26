@@ -8,6 +8,7 @@
         margin-top: 10px;
         width: 535px;
     }
+
     &__subtitle {
         position: relative;
         @include before_circle;
@@ -15,18 +16,19 @@
         padding-left: 10px;
     }
 
-
     &__btns {
         margin-top: 25px;
         display: flex;
-        width: 270px;
+        width: 275px;
         justify-content: space-between;
         align-items: center;
     }
+
     &__link {
         color: $text-color;
         text-decoration: none;
         font-weight: 700;
+
         &:hover {
             color: $text-color;
             text-decoration: none;
