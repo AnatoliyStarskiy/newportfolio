@@ -1,0 +1,20 @@
+.btn {
+    height: 45px;
+    padding: 12px 25px;
+
+    &_active {
+        background: $main-color;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+        &:hover {
+            background: $hover-color;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
+        }
+    }
+
+    &:hover {
+        background: $hover-color;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
+    }
+
+}
