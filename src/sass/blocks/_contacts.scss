@@ -1,0 +1,47 @@
+.contacts {
+    padding: 120px 0 90px 0;
+    min-height: 200px;
+
+    .divider {
+        margin: 0 auto;
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    &__social {
+        display: flex;
+        justify-content: center;
+       
+
+    }
+
+    &__link {
+        display: block;
+        margin: 25px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        svg {
+            max-width: 30px;
+            max-height: 30px;
+            transition: all .2s;
+            text-decoration: none;
+
+            &:hover {
+                transform: scale(1.2);
+
+            }
+        }
+
+
+    }
+}
