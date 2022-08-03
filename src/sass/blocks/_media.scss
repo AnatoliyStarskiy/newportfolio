@@ -41,12 +41,25 @@
         }
 
         &__ratings {
-            grid-template: repeat(2, minmax(70px, auto))/repeat(2, 1fr);
+            grid-template: repeat(auto-fit, minmax(70px, auto))/repeat(2, 1fr);
             justify-items: center;
             gap: 35px 60px;
 
             &-item {
                 grid-template: minmax(40px, auto) 14px/317px 35px;
+            }
+        }
+        
+    }
+    .portfolio {
+        &__wrapper {
+            grid-template-columns: repeat(auto-fit, 280px);
+            grid-auto-rows: 280px;
+            justify-content: space-around;
+            row-gap: 20px;
+            .horizonal, .vetrical {
+               grid-row: unset;
+               grid-column: unset;
             }
         }
     }
@@ -169,7 +182,7 @@
         }
     
         &__ratings {
-            grid-template: repeat(2, minmax(70px, auto))/repeat(1, 1fr);
+            grid-template: repeat(auto-fit, minmax(70px, auto))/repeat(1, 1fr);
             justify-items: center;
             gap: 35px 60px;
 
@@ -285,7 +298,7 @@
     
         &__ratings {
             padding-top: 60px;
-            grid-template: repeat(2, minmax(70px, auto))/repeat(1, 1fr);
+            grid-template: repeat(auto-fit, minmax(70px, auto))/repeat(1, 1fr);
             justify-items: center;
             gap: 35px 60px;
 
