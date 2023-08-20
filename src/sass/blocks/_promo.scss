@@ -3,6 +3,12 @@
     position: relative;
     background: url('../img/main-bg.jpg') center center / cover no-repeat;
     padding-top: 205px;
+    margin: auto;
+    overflow: auto;
+    background: linear-gradient(315deg, #ffffff 3%, #E2D6CE 38%, #1874A0 68%, #8CAEC9 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
 
     &__title {
         margin-top: 10px;
@@ -33,5 +39,21 @@
             color: $text-color;
             text-decoration: none;
         }
+    }
+
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
     }
 }

@@ -1,7 +1,7 @@
-.hamburger {
+/* .hamburger {
     position: absolute;
     top: 20px;
-    right: 30px;
+    left: 30px;
     height: 21px;
     display: flex;
     flex-direction: column;
@@ -123,4 +123,107 @@
         background-color: #fff;
         opacity: .75;
     }
+} */
+
+
+.menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(17px);
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+    transition: width 0.3s ease;
+
+    &:hover {
+        width: 260px;
+        padding-left: 10px;
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            opacity: .75;
+        }
+    }
+
+    &__links {
+        height: calc(100% - 140px);
+        overflow-y: auto;
+        scrollbar-width: none;
+        list-style: none;
+        margin-top: 20px;
+    }
+
+    &__links::-webkit-scrollbar {
+        display: none;
+    }
+
+    &__links h4 {
+        color: #222;
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: none;
+    }
+
+    &:hover .menu__links h4 {
+        display: block;
+    }
+
+    &__links li {
+        display: flex;
+        align-items: center;
+    }
+
+    &__links li:hover {
+        border-radius: 4px;
+        cursor: pointer;
+        background: #fff;
+    }
+
+
+    &__links hr {
+        border-color: #4c4c4c;
+        margin: 10px 8px;
+    }
+
+    &:hover .menu__links hr {
+        border-color: transparent;
+    }
+
+    &__links li span {
+        padding: 12px 10px;
+    }
+
+    &__links li a {
+        color: #000;
+        padding: 10px;
+        font-weight: 500;
+        white-space: nowrap;
+        text-decoration: none;
+        display: none;
+    }
+
+    &:hover .menu__links li a {
+        display: block;
+    }
+}
+
+.overlay .menu:hover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    opacity: .75;
 }
