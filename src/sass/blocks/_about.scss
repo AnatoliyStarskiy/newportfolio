@@ -28,6 +28,7 @@
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         padding-top: 6px;
+
         .divider {
             margin: 0px;
         }
@@ -69,7 +70,6 @@
     &__skills {
         &-item {
             display: flex;
-            justify-content: space-between;
             align-items: top;
         }
 
@@ -77,6 +77,7 @@
             padding: 10px 20px 0 15px;
             position: relative;
             @include before_circle;
+
             &::before {
                 top: 0;
             }
