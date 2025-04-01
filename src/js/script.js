@@ -207,17 +207,6 @@ window.addEventListener('DOMContentLoaded', function () {
     console.log('After resume() is called');
 
 // Форма
-
-<<<<<<< HEAD
-$('form').submit(function (e) {
-    e.preventDefault();
-    $.ajax({
-        type: "POST",
-        url: "mailer/smart.php",
-        data: $(this).serialize()
-    });
-    return false;
-=======
     // Форма
 
     /* $('form').submit(function (e) {
