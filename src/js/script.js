@@ -98,7 +98,70 @@ window.addEventListener('DOMContentLoaded', function () {
             this.parent.append(element);
         }
     }
-
+    new resumeCard(
+        "icons/experience/university.svg",
+        "work",
+        "Курс по Web-разработке",
+        'Курс направленный на освоение основных инструментов для WEB-разработки: HTML, CSS, JS, Git и GitHub, Bootstrap, мобильную адаптацию, Gulp, БЭМ <a href="https://www.udemy.com/certificate/UC-405a5d29-3fcc-429f-aefb-c49bc949df10/">Сертификат</a>',
+        'Udemy',
+        ".resume__column_first .resume__list"
+    ).render();
+    new resumeCard(
+        "icons/experience/courses.svg",
+        "work",
+        "Создание современных адаптивных веб сайтов. HTML5, CSS3",
+        'Курс ориентированный на изучение HTML5, CSS3 и jQuery. <a href="https://www.udemy.com/certificate/UC-5a88eb47-eba4-4b1b-a178-9a8ec2f05c58/">Сертификат</a>',
+        'Udemy',
+        ".resume__column_first .resume__list"
+    ).render();
+    new resumeCard(
+        "icons/experience/courses.svg",
+        "work",
+        "Копирайтинг и продвижение сайтов",
+        'Курс по копирайтингу и продвижению сайтов <a href="https://www.udemy.com/certificate/UC-475e57ca-9fb8-4fe9-ab96-18eb2e2f3adc/">Сертификат</a>',
+        'Udemy',
+        ".resume__column_first .resume__list"
+    ).render();
+    new resumeCard(
+        "icons/experience/courses.svg",
+        "work",
+        "Интернет-маркетинг",
+        'Курс о методах и стратегии продвижения продукта в интернете. <a href="Surtificate\certificate.pdf"target="_blanck">Сертификат</a>',
+        'Google Навыки',
+        ".resume__column_first .resume__list"
+    ).render();
+    new resumeCard(
+        "icons/experience/courses.svg",
+        "work",
+        "Основы поисковой оптимизации (SEO). Факторы ранжирования сайтов",
+        'Курс помогающий разобраться в SEO оптимизации <a href="https://stepik.org/cert/880171">Сертификат</a>',
+        'Stepik',
+        ".resume__column_first .resume__list"
+    ).render();
+    new resumeCard(
+        "icons/experience/courses.svg",
+        "work",
+        "ТЕСТИРОВАНИЕ ВЕБ-ПРИЛОЖЕНИЙ 2.0",
+        'Курс по тестированию веб-приложений с разбором основных методик и иструментов.',
+        'Software-Testing',
+        ".resume__column_first .resume__list"
+    ).render();
+    new resumeCard(
+        "icons/experience/courses.svg",
+        "work",
+        "Посадка верстки и создание тем на CMS WordPress",
+        'Курс разработке тем для WordPress, установки их на сайт и создание админ-панелей. <a href="https://www.udemy.com/certificate/UC-eaa9de89-7c03-4d9a-9c87-415890b98265/?utm_source=sendgrid.com&utm_medium=email&utm_campaign=email">Сертификат</a>',
+        'Stepik',
+        ".resume__column_first .resume__list"
+    ).render();
+    new resumeCard(
+        "icons/experience/courses.svg",
+        "work",
+        "Посадка верстки и создание тем на CMS WordPress",
+        'Курс разработке тем для WordPress, установки их на сайт и создание админ-панелей. <a href="https://www.udemy.com/certificate/UC-eaa9de89-7c03-4d9a-9c87-415890b98265/?utm_source=sendgrid.com&utm_medium=email&utm_campaign=email">Сертификат</a>',
+        'Stepik',
+        ".resume__column_first .resume__list"
+    ).render();
     new resumeCard(
         "icons/experience/designer.svg",
         "work",
@@ -144,4 +207,14 @@ window.addEventListener('DOMContentLoaded', function () {
     console.log('After resume() is called');
 });
 
+// Форма
 
+$('form').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+    });
+    return false;
+});
