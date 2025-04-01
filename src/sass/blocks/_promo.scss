@@ -1,62 +1,51 @@
 .promo {
     min-height: 100vh;
     position: relative;
-    background: url('../img/main-bg.jpg') center center / cover no-repeat;
-    padding-top: 205px;
-    margin: auto;
-    overflow: auto;
-    background: linear-gradient(315deg, #41a2bc 3%, #539de2 38%, #1874A0 68%, #85b0d3 98%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
+    padding-top: clamp(100px, 15vw, 205px);
+    overflow: hidden;
+    background-image:
+      linear-gradient(315deg, #41a2bc 3%, #539de2 38%, #1874A0 68%, #85b0d3 98%),
+      url('../img/main-bg.jpg');
+    background-size: 400% 400%, cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-
+    animation: gradient 15s ease infinite;
+  
     &__title {
-        margin-top: 10px;
-        width: 535px;
-        color: #ffffff;
+      margin-top: clamp(0.625rem, 1vw, 1.25rem); // ~10px
+      max-width: 90%;
+      font-size: clamp(1.75rem, 4vw, 3rem); // от 28px до 48px
+      line-height: 1.2;
+      color: #fff;
     }
-
+  
     &__subtitle {
-        position: relative;
-        @include before_circle;
-        z-index: 2;
-        padding-left: 10px;
-        color: #ffffff;
+      position: relative;
+      @include before_circle;
+      z-index: 2;
+      padding-left: clamp(0.625rem, 2vw, 1rem); // от 10px
+      font-size: clamp(1rem, 2.5vw, 1.25rem); // от 16px до 20px
+      color: #fff;
     }
-
+  
     &__btns {
-        margin-top: 25px;
-        display: flex;
-        width: 283px;
-        justify-content: space-between;
-        align-items: center;
+      margin-top: clamp(1rem, 3vw, 1.875rem); // от 16px до 30px
+      display: flex;
+      max-width: 90%;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: clamp(0.625rem, 2vw, 1.25rem); // от 10px до 20px
     }
-
+  
     &__link {
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 700;
-        
-
-        &:hover {
-            color: #ffffff;
-            text-decoration: none;
-        }
+      font-size: clamp(0.875rem, 1.8vw, 1rem); // от 14px до 16px
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+  
+      &:hover {
+        text-decoration: underline;
+      }
     }
-
-}
-
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
-    100% {
-        background-position: 0% 0%;
-    }
-}
+  }
+  

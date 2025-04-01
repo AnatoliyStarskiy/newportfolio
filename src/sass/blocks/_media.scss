@@ -16,148 +16,6 @@
         gap: 20px 25px
     }
 
-<<<<<<< HEAD
-    .resume__wrapper {
-        -moz-column-gap: 50px;
-        column-gap: 50px
-    }
-
-    .skills__wrapper {
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center
-    }
-
-    .skills__item {
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-    }
-
-    .skills__pic {
-        width: 50%;
-        height: 50%;
-    }
-
-    .skills__front{
-        width: 260px;
-        height: 200px;
-    }
-
-    .skills__back{
-        width: 230px;
-        height: 200px;
-    }
-
-    .skills__back .title{
-        font-size: 18px;
-        line-height: 28px;
-    }
-    .skills__descr{
-        max-width: 170px;
-        font-size: 12px;
-    }
-
-
-    .skills__ratings {
-        grid-template: repeat(auto-fit, minmax(70px, auto))/repeat(2, 1fr);
-        justify-items: center;
-        gap: 35px 60px
-    }
-
-    .skills__ratings-item {
-        grid-template: minmax(40px, auto) 14px/317px 35px
-    }
-
-    .portfolio {
-        padding-top: 120px;
-        min-height: 746px;
-    }
-
-    .portfolio__wrapper {
-        max-width: 1140px;
-
-    }
-
-    .portfolio__items {
-
-        height: 746px;
-        display: flex;
-        list-style-type: none;
-        overflow: hidden;
-    }
-
-    .portfolio__item {
-        display: block;
-        width: 50px;
-        overflow: hidden;
-        position: relative;
-        transition: 1s all;
-    }
-
-    .portfolio__item img {
-        z-index: 1;
-        object-fit: cover;
-        object-position: 20% 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .portfolio__item figure {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-
-    }
-
-    .portfolio__item figcaption {
-
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 36px;
-        position: absolute;
-        color: #fff;
-        width: 500px;
-        height: 300px;
-        text-align: left;
-        transform: rotate(270deg) translateX(60%) translatey(-33%);
-        bottom: 0;
-        left: 0;
-        transition: all .5s;
-    }
-
-
-    .portfolio__item-active {
-        width: 100%;
-        background-color: none;
-    }
-
-    .portfolio__item .portfolio__title-active {
-        transform: rotate(360deg) translateX(20.5%) translatey(25%);
-    }
-
-    .portfolio__descr {
-        position: absolute;
-        background-color: rgba(0, 0, 0, .2);
-        padding: 15px;
-        z-index: 2;
-        color: #fff;
-        width: 500px;
-        bottom: -100%;
-        left: 10%;
-        text-align: left;
-
-    }
-
-    .portfolio__descr a {
-        color: #fff;
-    }
-
-    .portfolio__descr-active {
-        bottom: 1%;
-        display: block;
-    }
-=======
     .skills {
         &__wrapper {
             grid-template-columns: repeat(3, 1fr);
@@ -201,7 +59,6 @@
             }
         }
     } */
->>>>>>> 0def1ba9e74814637fc001900a3360c5d89a6d28
 }
 
 
@@ -229,11 +86,16 @@
     }
 
     .resume__wrapper {
-        grid-template: minmax(129px, auto)/1fr
+        grid-template: minmax(129px, auto)/1fr;
+        padding: 0;
     }
 
     .skills__ratings-item {
         grid-template: minmax(40px, auto) 14px/273px 35px
+    }
+
+    .resume__item-body {
+        padding: 12px 0 0 43px;
     }
 
     .skills__ratings-line {
@@ -246,9 +108,23 @@
         max-width: 540px
     }
 
-    .promo__title {
-        line-height: 39px;
-        margin-top: 16px
+    .promo {
+        padding-top: 150px;
+
+        &__title {
+            width: 100%;
+            font-size: 28px;
+            line-height: 1.3;
+        }
+
+        &__subtitle {
+            font-size: 16px;
+        }
+
+        &__btns {
+            max-width: 100%;
+            justify-content: center;
+        }
     }
 
     .about {
@@ -293,10 +169,6 @@
         padding-top: 46px
     }
 
-<<<<<<< HEAD
-    .resume__wrapper {
-        row-gap: 40px
-=======
     .skills {
         &__ratings {
 
@@ -309,7 +181,6 @@
                 width: 300px;
             }
         }
->>>>>>> 0def1ba9e74814637fc001900a3360c5d89a6d28
     }
 
     .skills__wrapper {
@@ -330,41 +201,112 @@
         width: 428px
     }
 
-    .portfolio__item .portfolio__title-active {
-        transform: rotate(360deg) translateX(20.5%) translatey(10%);
+    .portfolio {
+        &__wrapper {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .card {
+            margin-bottom: 10px;
+            width: 100%;
+            height: auto;
+            min-height: 200px;
+            border-radius: 1.5rem;
+
+            >.row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+
+                >.icon {
+                    margin: 0 0 1rem 0;
+                }
+
+                >.description {
+                    width: 100%;
+                }
+            }
+        }
+
+        input:checked+label {
+            width: 100%;
+            height: auto;
+        }
     }
 
-    .portfolio__descr, .portfolio__descr-active {
-        max-width: 80%;
+    .contacts {
+        &__wrapper {
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
+
+        &__photo {
+            margin-bottom: 10px;
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__input input {
+            padding: 10px 20px;
+        }
+
+        &__textarea textarea {
+            padding: 10px 20px;
+        }
+
+        &__triggers {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+
+        &__btn {
+            width: 100%;
+        }
+
+        &__policy {
+            align-items: flex-start;
+            gap: 10px;
+
+            span {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
     }
-
-
 }
+
+
 
 @media(max-width:576px) {
     .container {
         width: 100%;
-        padding: 0 20px
+        padding: 0 0 0 20px;
     }
 
-<<<<<<< HEAD
-    .title_fz48 {
-        font-size: 36px
-    }
-
-    .title_fz36 {
-        font-size: 23px;
-        line-height: 36px
-=======
     .menu {
         width: 40px;
     }
 
 
     .promo {
+        padding-top: 120px;
+
         &__title {
-            line-height: 39px;
-            margin-top: 16px;
+            font-size: 22px;
+        }
+
+        &__subtitle {
+            font-size: 14px;
+        }
+
+        &__btns {
+            flex-direction: column;
+            gap: 15px;
         }
     }
 
@@ -441,66 +383,47 @@
     }
 
     .portfolio {
-
-        &__wrapper {
-            flex-direction: column;
-            height: 100vh;
-        }
-
         .card {
-            margin-bottom: 10px;
-            width: 65vw;
-            height: 22vh;
+            >.row {
+                padding: 0.75rem;
+
+                >.icon {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 0.85rem;
+                }
+
+                >.description {
+                    h4 {
+                        font-size: 1rem;
+                    }
+
+                    p {
+                        font-size: 0.875rem;
+                    }
+
+                    a {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
         }
-
-
-        .card>.row>.icon {
-            margin: .25rem;
-        }
-
-        .card>.row>.description {
-            width: 60%;
-        }
-
-        input:checked+label {
-            width: 65vw;
-            height: 100vh;
-        }
-
-        input:checked+.card>.row>.icon {
-            margin: 15px;
-        }
-
-
-
     }
 
     .contacts {
-        &__wrapper {
-            grid-template-columns: 1fr;
-            padding: 0;
-        }
 
-        &__photo {
-            margin-bottom: 10px;
+        &__input input,
+        &__textarea textarea {
+            font-size: 14px;
         }
 
         &__form {
-            display: flex;
-            flex-direction: column;
+            gap: 16px;
         }
 
-        &__input input {
-            padding: 10px 20px;
+        &__policy span {
+            font-size: 11px;
         }
-
-        &__triggers {
-            grid-template-columns: 1fr;
-            row-gap: 35px;
-        }
-
-
-
     }
 
 }
@@ -522,7 +445,6 @@
         }
 
 
->>>>>>> 0def1ba9e74814637fc001900a3360c5d89a6d28
     }
 
     .hamburger {
@@ -547,64 +469,6 @@
         width: 280px
     }
 
-<<<<<<< HEAD
-    .promo__subtitle::before {
-        top: -15%
-    }
-
-    .promo__btns {
-        margin-top: 32px
-    }
-
-    .promo .title_fz16 {
-        font-size: 14px;
-        line-height: 28px
-    }
-
-    .about__pic img {
-        -o-object-position: 20% -15px;
-        object-position: 20% -15px
-    }
-
-    .resume__wrapper {
-        padding: 40px 0 0 0
-    }
-
-    .resume__item-body {
-        padding: 12px 0 0 43px
-    }
-
-    .resume .title_fz14 {
-        font-size: 12px
-    }
-
-    .skills__wrapper {
-        grid-template-columns: repeat(1, 1fr)
-    }
-
-    .skills__ratings {
-        padding-top: 60px;
-        grid-template: repeat(auto-fit, minmax(70px, auto))/repeat(1, 1fr);
-        justify-items: center;
-        gap: 35px 60px
-    }
-
-    .skills__ratings-item {
-        grid-template: minmax(40px, auto) 14px/240px 35px
-    }
-
-    .skills__ratings-line {
-        width: 270px
-    }
-
-    .skills .title_fz16 {
-        font-size: 14px;
-        line-height: 18px
-    }
-
-    .portfolio__item .portfolio__title-active {
-        transform: rotate(360deg) translateX(8.5%) translatey(-20%);
-=======
     .skills {
         &__wrapper {
             grid-template-columns: repeat(1, 1fr);
@@ -632,6 +496,5 @@
                 line-height: 18px;
             }
         }
->>>>>>> 0def1ba9e74814637fc001900a3360c5d89a6d28
     }
 }
