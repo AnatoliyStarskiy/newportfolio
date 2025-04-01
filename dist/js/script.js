@@ -205,10 +205,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
     console.log('Before resume() is called');
     console.log('After resume() is called');
-});
 
 // Форма
 
+<<<<<<< HEAD
 $('form').submit(function (e) {
     e.preventDefault();
     $.ajax({
@@ -217,4 +217,186 @@ $('form').submit(function (e) {
         data: $(this).serialize()
     });
     return false;
+=======
+    // Форма
+
+    /* $('form').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        });
+        return false;
+    }); */
+
+    function validateContactForm() {
+        const form = document.querySelector('.contacts__form');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nameInput = form.querySelector('input[name="name"]');
+            const emailInput = form.querySelector('input[name="email"]');
+            const textArea = form.querySelector('textarea');
+            const checkbox = form.querySelector('input[type="checkbox"]');
+
+            if (!nameInput.checkValidity()) {
+                alert('Пожалуйста, введите свое имя.');
+                return;
+            }
+
+            if (!emailInput.checkValidity()) {
+                alert('Пожалуйста, введите корректный адрес почты.');
+                return;
+            }
+
+            if (!textArea.checkValidity()) {
+                alert('Пожалуйста, введите сообщение.');
+                return;
+            }
+
+            if (!checkbox.checked) {
+                alert('Подтвердите согласие с политикой конфиденциальности.');
+                return;
+            }
+
+            // Все данные прошли валидацию - можно отправить форму на сервер
+            sendFormToServer(form);
+        });
+
+        // Функция для отправки формы на сервер
+        function sendFormToServer(form) {
+            const formData = new FormData(form);
+
+            fetch('mailer/smart.php', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        // Очистка полей формы после успешной отправки
+                        form.reset();
+
+                        // Можете добавить здесь дополнительные действия после успешной отправки
+                    } else {
+                        alert('Произошла ошибка при отправке формы.');
+                    }
+                });
+        }
+    }
+
+    // Функция для проверки валидности email
+    function isValidEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailPattern.test(email);
+    }
+
+    // Запуск валидации формы
+    validateContactForm();
+
+    // Портфолио
+
+    const portfolioItems = document.querySelector('.portfolio__wrapper');
+
+
+    class Card {
+        constructor(id, src, alt, title, descr, link, isChecked = false) {
+            this.id = id;
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.link = link;
+            this.isChecked = isChecked;
+        }
+
+        render() {
+
+            const portfolioInput = document.createElement('input');
+            const portfolioLabel = document.createElement('label');
+
+            portfolioInput.setAttribute("type", "radio");
+            portfolioInput.setAttribute("name", "slide");
+            portfolioInput.setAttribute("id", this.id);
+            if (this.isChecked) {
+                portfolioInput.setAttribute('checked', true);
+            }
+
+            portfolioLabel.classList.add('card');
+            portfolioLabel.setAttribute("for", this.id);
+            portfolioLabel.style.backgroundImage = `url('${this.src}')`;
+
+            portfolioLabel.innerHTML = `        
+                <div class="row">
+                    <div class="icon">${this.id.replace('c', '')}</div>
+                    <div class="description">
+                        <h4>${this.title}</h4>
+                        <p>${this.descr}</p>
+                        <a href='${this.link}'>Link</a>
+                    </div>
+                </div>
+            
+        `;
+            portfolioItems.append(portfolioInput);
+            portfolioItems.append(portfolioLabel);
+        }
+    }
+    new Card(
+        "c1",
+        "img/works/pulse.jpg",
+        "Pulse",
+        'Pulse',
+        'Landing page for selling fitness bracelets',
+        '/Pulse',
+        true
+    ).render();
+
+    new Card(
+        "c2",
+        "img/works/odig.jpg",
+        "Odig",
+        'Odig',
+        'Website for tourists who are going to visit Japan',
+        '/odig'
+    ).render();
+
+    new Card(
+        "c3",
+        "img/works/cesar-1.jpg",
+        "auxpo",
+        'auxpo',
+        'The main page of the site dedicated to the sale of NFT images',
+        '/auxpo'
+    ).render();
+
+    new Card(
+        "c4",
+        "img/works/paralax.jpg",
+        "Paralax",
+        'Paralax',
+        'Website demonstrating the implementation of the parallax effect',
+        '/paralax'
+    ).render();
+
+    new Card(
+        "c5",
+        "img/works/StarCraft_II.jpg",
+        "starcraft",
+        'Starcraft',
+        'A small game created using Vue',
+        '/starcraft'
+    ).render();
+
+    new Card(
+        "c6",
+        "img/works/mavic.png",
+        "Mavic",
+        'Mavic',
+        'Landing page for the presentation of DJI Mavic quadcopters',
+        '/mavic'
+    ).render();
+
+>>>>>>> 0def1ba9e74814637fc001900a3360c5d89a6d28
 });
