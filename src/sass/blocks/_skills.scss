@@ -1,87 +1,126 @@
-.skills {
-    padding-top: 40px;
-    min-height: 1024px;
+.skills__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+    margin-top: 40px;
+}
 
-    .divider {
-        margin: 0 auto;
+.skill-card {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    border-radius: 16px;
+    cursor: pointer;
+    background: transparent;
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s ease;
+        transform-style: preserve-3d;
     }
 
-    &__wrapper {
-        padding: 60px 11px 0 11px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-auto-rows: auto;
-        gap: 11px;
+    &.flipped &__inner {
+        transform: rotateY(180deg);
     }
 
-    &__item {
-        width: 270px;
-        height: 270px;
-        border: 1px solid #000;
+    &__front,
+    &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 16px;
+        padding: 25px 15px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
     }
 
-    &__header {
-        font-weight: 700;
-        font-size: 24px;
-    }
+    .skill-card {
+        // остальное без изменений…
 
-    &__pic {
-        width: 200px;
-        height: 200px;
+        &__back {
+            // уже есть:
+            transform: rotateY(180deg);
+            font-size: 13px;
+            color: #333;
+            line-height: 1.4;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
 
-        img {
-            display: block;
-            margin: auto;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center center;
-        }
-    }
-
-    &__ratings {
-        padding-top: 120px;
-        display: grid;
-        grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 350px);
-        gap: 35px 45px;
-
-        &-item {
-            display: grid;
-            grid-template: minmax(21px, auto) 14px / 200px 35px;
-            justify-content: space-between;
-            align-content: space-between;
-        }
-
-        &-title {
-            position: relative;
-            padding: 0 0 0 13px;
-            @include before_circle;
-        }
-
-        &-counter {
-            font-size: 14px;
-            line-height: 21px;
-        }
-
-        &-line {
-            width: 350px;
-            height: 14px;
-            background-color: #E8E4DE;
-            border-radius: 4px;
-            grid-column: 1 / 3;
-
-            span {
-                display: block;
-                height: 100%;
-                width: 100%;
-                background-color: $main-color;
-                border-radius: 4px;
+            .skill-card__link-wrap {
+                margin-top: 16px;
             }
+
+            .skill-card__link {
+                font-size: 13px;
+                font-weight: 500;
+                color: #222;
+                text-decoration: none;
+                position: relative;
+                padding-bottom: 2px;
+                transition: all 0.3s ease;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 1px;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.2);
+                    transition: background 0.3s ease;
+                }
+
+                &:hover {
+                    color: #000;
+
+                    &::after {
+                        background: rgba(0, 0, 0, 0.6);
+                    }
+                }
+            }
+        }
+    }
+
+
+    img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 12px;
+    }
+
+    .progress-bar {
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        width: 100%;
+        overflow: hidden;
+
+        span {
+            display: block;
+            height: 100%;
+            background: #00bcd4; // нейтральный фирменный цвет
         }
     }
 }

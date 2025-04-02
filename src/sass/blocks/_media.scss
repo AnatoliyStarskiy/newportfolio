@@ -78,7 +78,8 @@
 
     .about__pic {
         width: 300px;
-        grid-row: 1/2
+        grid-row: 1/2;
+        height: 53%;
     }
 
     .about__skills {
@@ -133,7 +134,7 @@
 
     .about__wrapper {
         grid-template-columns: 1fr;
-        grid-template-rows: 340px auto auto;
+        grid-template-rows: 42rem auto auto;
         gap: 20px
     }
 
@@ -145,8 +146,8 @@
     }
 
     .about__pic img {
-        -o-object-position: 20% -35px;
-        object-position: 20% -35px
+        -o-object-position: 20% -8px;
+        object-position: 20% -8px
     }
 
     .about__text {
@@ -315,7 +316,7 @@
 
         &__wrapper {
             grid-template-columns: 1fr;
-            grid-template-rows: 340px auto auto;
+            grid-template-rows: 31rem auto auto;
             gap: 20px;
         }
 
@@ -327,7 +328,8 @@
             grid-row: 1 / 2;
 
             img {
-                object-position: 20% -35px;
+                object-position: 20% 0;
+                width: 150%;
             }
 
         }

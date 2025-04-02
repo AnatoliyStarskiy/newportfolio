@@ -17,7 +17,13 @@
 }
 
 body {
-    background: radial-gradient(ellipse at center, #f7f9fc 60%, #b0b2b5 100%);
+    background: linear-gradient(
+        to right,
+        rgba(176, 178, 181, 1) 0%,
+        #f7f9fc 20%,
+        #f7f9fc 80%,
+        rgba(176, 178, 181, 1) 100%
+    );
     color: #333;
     font-family: 'Inter', sans-serif;
 }
@@ -29,11 +35,15 @@ body {
 }
 
 .divider {
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: $main-color;
-    margin-top: 25px auto 0 auto;
+    width: 80%;
+    height: 4px;
+    margin: 25px auto;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    box-shadow:
+        inset 1px 1px 3px rgba(255, 255, 255, 0.6),
+        inset -1px -1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @import 'blocks/promo';
@@ -44,6 +54,7 @@ body {
 @import 'blocks/about';
 @import 'blocks/resume';
 @import 'blocks/skills';
+@import 'blocks/process';
 @import 'blocks/portfolio';
 @import 'blocks/contacts';
 @import 'blocks/media';
